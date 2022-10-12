@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Asus\\Documents\\VsCode\\PBM\\Praktikum 2\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Asus\\Documents\\VsCode\\PBM\\Pemrograman-Mobile\\Praktikum 2\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Asus\\Documents\\VsCode\\PBM\\Praktikum 2\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\Asus\\Documents\\VsCode\\PBM\\Pemrograman-Mobile\\Praktikum 2\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

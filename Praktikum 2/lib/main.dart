@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   double sizeFont = 12.0;
-  bool isVisible = false;
+  bool isVisible = true;
 
   void perbesar() {
     setState(() {
