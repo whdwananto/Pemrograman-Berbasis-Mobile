@@ -1,4 +1,4 @@
-# first_app
+# PRAKTIKUM_2
 
 A new Flutter project.
 
