@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   double sizeFont = 12.0;
-  bool isVisible = true;
+  bool gantiNama = true;
 
   void perbesar() {
     setState(() {
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _isVisible() {
     setState(() {
-      isVisible = !isVisible;
+      gantiNama = !gantiNama;
     });
   }
 
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            isVisible ? const Text('Wahyu Dwi Ananto') : const Text("WAHYU"),
+            gantiNama ? const Text('Wahyu Dwi Ananto') : const Text("WAHYU"),
             OutlinedButton(
                 onPressed: _isVisible,
                 child: const Text('tekan untuk mengubah nama')),
@@ -70,10 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlinedButton(
                 onPressed: perbesar,
-                child: const Text('tekan untuk memperbesar "TEXT"')),
+                child: const Text('tekan untuk memperbesar "TEXT"',
+                    style: TextStyle(color: Colors.red))),
             OutlinedButton(
                 onPressed: perkecil,
-                child: const Text('tekan untuk memperkecil "TEXT')),
+                child: const Text('tekan untuk memperkecil "TEXT',
+                    style: TextStyle(color: Colors.green))),
           ],
         ),
       ),
