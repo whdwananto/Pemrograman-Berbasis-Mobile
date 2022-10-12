@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _isVisible() {
+  void _gantiNama() {
     setState(() {
       gantiNama = !gantiNama;
     });
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             gantiNama ? const Text('Wahyu Dwi Ananto') : const Text("WAHYU"),
             OutlinedButton(
-                onPressed: _isVisible,
+                onPressed: _gantiNama,
                 child: const Text('tekan untuk mengubah nama')),
             Text(
               'TEXT',
