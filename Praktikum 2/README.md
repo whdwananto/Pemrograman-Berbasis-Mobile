@@ -1,4 +1,4 @@
-# PRAKTIKUM_2
+# PRAKTIKUM 2
 
 A new Flutter project.
 
