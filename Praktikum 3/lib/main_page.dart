@@ -8,6 +8,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Row(
           children: [
             const Text(
@@ -46,7 +47,7 @@ class MainPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  height: 30,
+                  height: 15,
                 ),
                 const Text(
                   "URBANISTIC",
