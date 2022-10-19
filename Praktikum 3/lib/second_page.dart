@@ -76,12 +76,18 @@ class SecondPage extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.w900, fontSize: 37),
                     ),
                     Container(
-                      width: 128,
+                      width: 123,
                     ),
-                    const Text(
-                      "View All",
-                      style:
-                          TextStyle(fontStyle: FontStyle.italic, fontSize: 14),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "View All",
+                        style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 14,
+                          color: Colors.black87,
+                        ),
+                      ),
                     ),
                   ],
                 ),
