@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_6/profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -10,72 +11,87 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return const MaterialApp(
+      home: HalPertama(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class HalPertama extends StatefulWidget {
+  const HalPertama({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HalPertama> createState() => _HalPertamaState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HalPertamaState extends State<HalPertama> {
   final Future<SharedPreferences> _preference = SharedPreferences.getInstance();
-  int _counter = 0;
+  bool _isBool = false;
 
-  Future<void> _incrementCounter() async {
+  Future<void> _boolean() async {
     final SharedPreferences prefs = await _preference;
     setState(() {
-      _counter++;
+      _isBool = !_isBool;
+      if (_isBool == true) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Profile(),
+            ));
+        print("Berhasil");
+      } else {
+        print("Gagal");
+      }
     });
-    prefs.setInt('counter', _counter);
+    prefs.setBool('bool', _isBool);
   }
 
-  _getCounter() async {
+  _getBool() async {
     final SharedPreferences prefs = await _preference;
-    _counter = prefs.getInt('counter') ?? _counter;
+    _isBool = prefs.getBool('bool') ?? _isBool;
+    if (_isBool == true) {
+      if (!mounted) return;
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Profile(),
+          ));
+      print("Berhasil");
+    } else {
+      print("Gagal");
+    }
   }
 
   @override
   void initState() {
     super.initState();
-    _getCounter();
+    _getBool();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: _boolean,
+                child: const Text(
+                  "Click Me",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
