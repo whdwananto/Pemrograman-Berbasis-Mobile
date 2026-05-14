@@ -1,0 +1,26 @@
+{
+    "nama" : "Jacky Chan",
+    "umur" : 50,
+    "info" : {
+        "alamat" : "Hongkong",
+        "wa" : "098765"
+    },
+    "pengalaman" : [
+        {
+            "kantor" : "PT roti berkah",
+            "lama_pengalaman" : 5,
+            "profesi" : "Admin"
+        },
+        {
+            "kantor" : "PT roti berkah",
+            "lama_pengalaman" : 2,
+            "profesi" : "Teller"
+        },
+        {
+            "kantor" : "PT roti berkah",
+            "lama_pengalaman" : 4,
+            "profesi" : "operator"
+        }
+        
+        ]
+}
